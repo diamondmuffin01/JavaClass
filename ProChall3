@@ -1,0 +1,28 @@
+import java.util.Scanner; //add the Scanner class here
+/**
+ * ProChall3 class does the following:
+ * 1) Create & initialize variables
+ * 2) Display variables in a single line
+ * 
+ * @author Cesar Melero 
+ * @version v1.0
+ * @since 2020/02/06
+ */
+public class Main{  
+    public static void main (String[] args){
+        
+        //create a new Scanner objects
+        Scanner input = new Scanner(System.in);
+        
+        //variables 
+        String name = "Cesar Melero";
+        String address = "San Diego, CA 92119 ";
+        String number = "123-456-7890";
+        String major = "Computer Science";
+        
+
+        System.out.print("My name is " + name + "\nMy address is " + address + "\nMy number is " + number +
+        "\nMy major is " + major);
+ 
+    }
+}
