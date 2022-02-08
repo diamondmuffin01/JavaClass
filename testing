@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class Main{
+    public static void main (String[] args){
+        // variables 
+        final double tax = 0.0675;
+        final double tip = 0.20;
+        double meal; 
+        double total;  
+        double taxAmount;
+        double tipAmount;
+     
+        
+        Scanner input = new Scanner(System.in);
+        
+        //Get input
+        System.out.print("Enter meal amount: $");
+        meal = input.nextDouble();
+        
+        taxAmount = meal * tax;
+        
+        System.out.printf("\nThe tax is: $%.2f", taxAmount);  
+        total = meal+taxAmount; 
+
+        System.out.printf("\nThe meal cost with tax is : $%.2f",total);
+        
+        tipAmount = tip * meal;
+        total = total + tipAmount;
+     
+        System.out.printf("\nThe meal cost with tip is : $%.2f",total);   
+        
+     }
+}
