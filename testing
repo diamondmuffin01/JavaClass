@@ -9,31 +9,33 @@ public class Main{
         final double commRate = 0.02; 
         
         String temp;
-        double total, pricePerShareDouble, commission, totalCostShares;
+        String temp2;
+        double total, pricePerShareDouble,commission, totalCostShares;
         int numShares;
         
-      
+      /*
         //get input
         temp = JOptionPane.showInputDialog("Enter number of shares purchased : ");
-        System.out.print(temp);
-      /*
-        Use Integer.parseInt with temp var as an argument to generate an int from 
-String and assign to numShares
-        Repeat these steps as appropriate to get pricePerShare
-        */
+        numShares = Integer.parseInt(temp);
         
-       //computations
-       /*assign totalCostShares with product of what and what?
-       assign commission with product of what (hint step above) and what?
-       assign total with addition of what and what (hint look at above two values)
+        temp2 = JOptionPane.showInputDialog("Enter number of price per share : ");
+        pricePerShareDouble = Double.parseDouble(temp2);
+        
+        
+        
+       //computations & display output
+       totalCostShares = numShares * pricePerShareDouble;
        */
-        
-       //display output
-       /*
-       Create a showMessageDialog showing cost of shares, commission, and total.  
-"+, \n's, and String.format("$%,.2f",var)
-       */
-        
-       //make sure to add System.exit(0) :-)
+          totalCostShares = 13062.00;
+       System.out.printf("Total cost of of shares are: $%,.2f \n", totalCostShares);
+       
+       commission = totalCostShares * commRate;
+       System.out.printf("Commission cost is: $%,.2f \n", commission);
+       
+        total = commission + totalCostShares;
+        System.out.printf("Total Cost is: $%,.2f \n", total);
+       
+           
+           System.exit(0);
     }
 }
