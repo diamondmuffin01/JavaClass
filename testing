@@ -1,12 +1,39 @@
+import javax.swing.JOptionPane; //JOptionPane class
+import java.util.Scanner;
 
-
-import javax.swing.JOptionPane;
-
-
-public class Main
-{
-	public static void main(String[] args) {
-	
-	JOptionPane.showMessageDialog(null, "lol hi","title",JOptionPane.PLAIN_MESSAGE);
-	}
+public class Main{  
+    public static void main (String[] args){
+        
+        Scanner input = new Scanner(System.in);
+        
+        final double commRate = 0.02; 
+        
+        String temp;
+        double total, pricePerShareDouble, commission, totalCostShares;
+        int numShares;
+        
+      
+        //get input
+        temp = JOptionPane.showInputDialog("Enter number of shares purchased : ");
+        System.out.print(temp);
+      /*
+        Use Integer.parseInt with temp var as an argument to generate an int from 
+String and assign to numShares
+        Repeat these steps as appropriate to get pricePerShare
+        */
+        
+       //computations
+       /*assign totalCostShares with product of what and what?
+       assign commission with product of what (hint step above) and what?
+       assign total with addition of what and what (hint look at above two values)
+       */
+        
+       //display output
+       /*
+       Create a showMessageDialog showing cost of shares, commission, and total.  
+"+, \n's, and String.format("$%,.2f",var)
+       */
+        
+       //make sure to add System.exit(0) :-)
+    }
 }
