@@ -24,10 +24,10 @@ public class Main //remove _Starter
         int exam1, exam2, exam3;
         
         //double var for avg
-        double avg;
+        double avg
         
         //char var for grade
-        char grade; 
+        String grade; 
         
         
         //get user input for each exam via GUI, will need to get a String and use Integer wrapper class to convert
@@ -45,6 +45,37 @@ public class Main //remove _Starter
         //GUI output
         //showMessageDialog with message and formatting so that average is 1 decimal place and  
         //on next line provides the letter grade 
+        
+        
+        
+        avg = (double) (exam1 + exam2 + exam3) / 3; 
+        
+        if (avg<100 && avg>90) {
+            grade = 'A';
+            
+        }
+        
+        else if (avg<89 && avg>80) {
+            grade = 'B';
+        }
+        
+          else if (avg<79 && avg>70) {
+            grade = 'C';
+        }
+        
+          else if (avg<69 && avg>60) {
+            grade = 'D';
+        }
+        
+        else {
+            grade = 'F';
+        }
+       
+         JOptionPane.showMessageDialog(null, 
+    String.format("score : %s" , grade)
+       
+
+        
             
         //make sure to include a proper System.exit to close the GUI thread
     }//end main
