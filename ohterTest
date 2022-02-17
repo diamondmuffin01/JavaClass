@@ -1,0 +1,51 @@
+import javax.swing.JOptionPane; //JOptionPane class
+import java.util.Scanner;
+
+/**
+ * ProbChall_4 asks the user to input...
+ * 1) List the steps
+ * 
+ * @author <Name>, <optional email>
+ * @version v1.0
+ * @since <date>
+ */
+public class Main //remove _Starter
+{
+    public static void main (String[] args){
+         Scanner input = new Scanner(System.in);
+        
+        
+        
+        
+        //vars
+        String userInput; 
+        
+        //int vars for each exam
+        int exam1, exam2, exam3;
+        
+        //double var for avg
+        double avg;
+        
+        //char var for grade
+        char grade; 
+        
+        
+        //get user input for each exam via GUI, will need to get a String and use Integer wrapper class to convert
+        userInput = JOptionPane.showInputDialog("I will find the average three test scores for you \n Enter first test score : ");
+        exam1 = Integer.parseInt(userInput);
+        
+        userInput = JOptionPane.showInputDialog("Enter second test score : ");
+        exam2 = Integer.parseInt(userInput);
+        
+        userInput = JOptionPane.showInputDialog("Enter third test score : ");
+        exam3 = Integer.parseInt(userInput);
+        
+        //figure out average, make sure you generate a double.  Think casting here.
+        //Create Multibrach if-else if based on scores that sets appropriate letter grade (char)
+        //GUI output
+        //showMessageDialog with message and formatting so that average is 1 decimal place and  
+        //on next line provides the letter grade 
+            
+        //make sure to include a proper System.exit to close the GUI thread
+    }//end main
+}//end class
