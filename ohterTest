@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @version v1.0
  * @since <date>
  */
-public class Main //remove _Starter
+public class Chall4
 {
     public static void main (String[] args){
          Scanner input = new Scanner(System.in);
@@ -24,10 +24,10 @@ public class Main //remove _Starter
         int exam1, exam2, exam3;
         
         //double var for avg
-        double avg
+        double avg;
         
         //char var for grade
-        String grade; 
+        char grade; 
         
         
         //get user input for each exam via GUI, will need to get a String and use Integer wrapper class to convert
@@ -50,31 +50,34 @@ public class Main //remove _Starter
         
         avg = (double) (exam1 + exam2 + exam3) / 3; 
         
-        if (avg<100 && avg>90) {
+        if (avg<=100 && avg>=90) {
+         
             grade = 'A';
-            
         }
         
-        else if (avg<89 && avg>80) {
-            grade = 'B';
+        else if (avg<90 && avg>=80) {
+              
+                grade = 'B';
         }
         
-          else if (avg<79 && avg>70) {
-            grade = 'C';
+          else if (avg<80 && avg>=70) {
+             
+                     grade = 'C';
         }
         
-          else if (avg<69 && avg>60) {
-            grade = 'D';
+          else if (avg<70 && avg>=60) {
+                 grade = 'D';
         }
         
         else {
-            grade = 'F';
+                 grade = 'F';
         }
        
          JOptionPane.showMessageDialog(null, 
-    String.format("score : %s" , grade)
-       
+   // String.format("score : %s & grade is : %f" , grade,avg));
+   String.format("With an avg score of %.1f \nYour grade is: %c",avg,grade));    
 
+             System.exit(0);
         
             
         //make sure to include a proper System.exit to close the GUI thread
