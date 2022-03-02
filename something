@@ -1,0 +1,91 @@
+import java.util.Scanner;
+
+/**
+ * 
+ * Flashback class does the following : 
+ * 1.) We start by getting max number of starts by user 
+ * 2.) We make sure variable is odd 
+ * 3.) We use a nested for loop to display upper half
+ * 4.) We use a nested for loop to display bottom half
+ * 
+ *
+ * @author Cesar Melero
+ * @version v1.0
+ * @since 3.1.2021
+ * 
+ * */
+
+public class Flashback
+{
+  public static void main (String[]args)
+  {
+
+    Scanner scan = new Scanner (System.in);
+
+//get max number of stars 
+    String input;
+    int maxNum; 
+    
+    input = JOptionPane.showInputDialog("Enter max number of stars : ");
+    maxNum = Integer.parseInt(temp);
+
+//this makes sure number is odd
+    if (((maxNum % 2) == 0))
+      {
+	maxNum = ++maxNum;
+      }
+      
+      
+
+    for (int z = 1; z <= maxNum; z++)
+      {
+
+//This prints the top half of the stars(works)
+	for (int i = 1; i <= z; ++i)
+	  {
+	    if (!((z % 2) == 0))
+	      {
+		System.out.print ("*");
+
+	      }
+	  }
+
+//This makes sure appropriate line is skipped 
+	if ((z % 2) == 0)
+	  {
+	    System.out.println ();
+	  }
+
+
+      }
+
+    System.out.println ();
+
+    for (int z = 1; z <= maxNum; z++)
+      {
+
+
+//This prints the bottom half of the stars 
+	for (int e = (maxNum - 2); e >= z; e--)
+	  {
+	    if (!((z % 2) == 0))
+	      {
+		System.out.print ("*");
+
+	      }
+	  }
+
+
+//This makes sure appropriate line is skipped 
+	if ((z % 2) == 0)
+	  {
+	    System.out.println ();
+	  }
+
+
+      }
+
+
+
+  }
+}
