@@ -1,77 +1,79 @@
+//import JOptionPane;
 import java.util.Scanner;
+import java.io.*;
+
+/**
+ * 
+ * 1) Creat variables for file names
+ * 2) Set inFile via getInFile() method 
+ * 3) Set outFile using getOutFile() method
+ * 4) Call processFile() method with inFile & outFile as arguments 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+*/
+
+
+public class Main
+{
+	public static void main (String[] args) throws IOException {
+		
+//String inFile, outFile; 
+
+		
+
+Scanner input = new Scanner(System.in);
+
+String inputFile = getInFile();
+		
+System.out.print(inputFile);
+
+	}
 
 
 
+public static String getInFile() {
 
 
+   Scanner input = new Scanner(System.in);
 
-public class Main {
-  public static void main(String[] args) {
+	String var1;
+	boolean valid = true;
+	
+	while (valid) {
+	System.out.print("Enter name of ");
+	
+	var1 = input.nextLine();
+	
+	try {
+	    
+	    PrintWriter outputFile = new PrintWriter(var1);
+	    
+	    valid = false;
+	}
+	
+	catch(Exception e) {
+	    System.out.print("Enter valid file");   
+	}
+	
+	}
+	
+	return ;
+
+}}
 
 
-          
-          Scanner input = new Scanner(System.in);
-
-         int test01;
-         String test02;
-         char test03;
-         boolean validInput = true;
-        input.useDelimiter(" ");
-        double test04 =0.0;
-     
-         
-         do  {
-            
-          System.out.print("Please enter numb space letter : ");
-             
-          test01     = input.nextInt();
-
-          test02  =  input.nextLine();
-
-          
-          test02 = test02.toUpperCase();
-            
-          test03   = test02.charAt(1);
-
-          
-            if (test03=='C') {
-                          validInput = false;
-            }
-            
-            if (test03=='F') {
-                        validInput = false; 
-            }
-         }
-         
-         
-         while(validInput);
-         
-         
-         System.out.println("test01: "+test01);
-          System.out.println("test02: "+test02);
-             System.out.println("test03: "+test03);
-         
-         if(test03=='F') {
-            test04 = (double) (test01-32) * (5/9);
-         }
-         
-         if(test03=='C') {
-            test04 = (double) test01 * (9/5) + 32; 
-         }
-         
-
-         System.out.println(test04);
-
-         System.out.print("Your out");
-        
-        
-       //   System.out.println(test02);
-
-          
-          
-         // System.out.println("Enter number, space, then A/C");
-          
-          
-          
-          }}
-          
