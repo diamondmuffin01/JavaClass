@@ -1,0 +1,249 @@
+import java.util.Scanner;
+import java.io.*;
+import javax.swing.JOptionPane;
+
+
+/**
+ * 
+ * 1) get inFile name (file that will have grades) via getInFile() method
+ * 2) get outFile name (file that will recieve output) via getOutFile() method
+ * 3) send inFile & outFile to processFile() method
+ * 
+ * 
+ * 
+ * 
+ * 
+*/
+
+
+public class Main
+{
+    public static void main (String[] args) throws IOException {
+        
+
+Scanner input = new Scanner(System.in);
+
+String inFile, outFile;
+
+inFile = getInFile();
+outFile = getOutFile();
+System.out.println("\n");
+processFile(inFile, outFile);
+
+    }
+    
+/**
+ * 
+ * Use JOptionPane to get and return input file name
+ * @return name of file
+ * 
+ */    
+
+public static String getInFile() throws IOException {
+    
+    String StringVa;
+    String FileVar;
+    
+    Scanner input = new Scanner(System.in);
+    
+    StringVa = JOptionPane.showInputDialog("Enter name of input file (ie input.txt)");
+    
+    String temp = StringVa;
+
+    File file = new File(StringVa);
+ 
+    
+   if(!file.exists()) {
+       JOptionPane.showMessageDialog(null, String.format("File doesn't exsist"));
+        System.exit(0);
+    }
+   
+    
+       return StringVa;
+    }
+
+
+/**
+ * 
+ * Use JOptionPane to get and return output file name
+ * @return name of output file
+ * 
+ * 
+ */
+
+public static String getOutFile() {
+    
+    Scanner input = new Scanner(System.in);
+    
+    String StringVa;
+    String FileVar;
+    
+        StringVa = JOptionPane.showInputDialog("Enter name of input file (ie test.txt)");
+
+    
+    
+    return StringVa;
+    
+    
+}
+
+
+/**
+ * 
+ * 
+ * @param name of infile 
+ * @param name of outfile 
+ * 
+ * 
+ * 
+ */
+
+public static void processFile(String inFile, String outFile) throws IOException {
+
+    int lines = 1;
+    int num;
+    int accum=0;
+    int As=0;
+    int Bs=0;
+    int Cs=0;
+    int Ds=0;
+    int Fs=0;
+    int min=0;
+    int max=0;
+    int total=0;
+    double avg = 0.0;
+    
+
+    Scanner scan = new Scanner(System.in);
+    
+    //input file setup
+    File file = new File(inFile);
+    
+    Scanner inputFile = new Scanner(file);
+
+    
+    //output file setup
+    PrintWriter outputFile = new PrintWriter(outFile);
+    
+    //find smallest number
+    //String line = inputFile.nextLine();
+    Scanner inputFilee = new Scanner(file);
+    min = inputFilee.nextInt();
+    
+    //this works with infile
+    while(inputFile.hasNext()) {
+        
+        num = inputFile.nextInt();
+        
+      
+     
+            
+
+        
+        
+        if(num>max) {
+            
+            max = num;
+        }
+    
+        if (num<min && (num!=-1)) {
+            
+            min = num;
+        }
+        
+        
+        
+        
+        
+        //sets
+        if(num==-1) {
+            
+            
+            
+            
+            
+            
+            
+            
+       //  outputFile.println();
+            
+            outputFile.println("Set "+lines+" of grades calculated");
+            
+            if(total==0) {
+                
+                outputFile.println("No grades to average\n\n");
+            }
+            
+            else {
+            outputFile.println("Number of As: "+As);
+            outputFile.println("Number of Bs: "+Bs);
+            outputFile.println("Number of Cs: "+Cs);
+            outputFile.println("Number of Ds: "+Ds);
+            outputFile.println("Number of Fs: "+Fs);
+            outputFile.println("The high score was: "+ max);
+            outputFile.println("The low score was: "+ min);
+            
+            avg = (double) total/accum;
+            
+            outputFile.printf("The average score was: %.1f \n\n",avg);
+           
+         
+
+
+        }
+      
+            total = 0;
+            lines = lines + 1;
+            accum = 0;
+            max = 0;
+            min = 100;
+             As=0;
+            Bs=0;
+            Cs=0;
+            Ds=0;
+            Fs=0;
+        }
+        
+   
+        if(num!=-1) { 
+         accum = accum + 1;
+         total = num + total;
+         
+           if(num>=90) {
+            As++;
+        }
+        
+        else if(num>=80) {
+            Bs++;
+        }
+        
+        else if(num>=70) {
+            Cs++;
+        }
+        
+        else if (num>=60) {
+            Ds++;
+        }
+        
+        else if (num<=60) {
+            Fs++;
+        }
+         
+         
+        }
+        
+ 
+    }
+    
+    
+    
+    
+    inputFile.close();
+    outputFile.close();
+    
+    
+}
+
+
+
+}
