@@ -1,79 +1,75 @@
-//import JOptionPane;
 import java.util.Scanner;
-import java.io.*;
 
-/**
- * 
- * 1) Creat variables for file names
- * 2) Set inFile via getInFile() method 
- * 3) Set outFile using getOutFile() method
- * 4) Call processFile() method with inFile & outFile as arguments 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
-*/
+public class Triangle {
+    
+    Scanner scan = new Scanner(System.in);
+    
+    private String name = "Unknown" ;
+    private double base = 0.0;
+    private double height = 0.0;
+    
+ 
+    public Triangle(String Name, double Base, double Height) {
+        name = Name;
+        base = Base;
+        height = Height;
+    
+    }
+    
+    
+    
+    public Triangle() {
+        this.name = name;
+        this.base = base;
+        this.height = height;
+    
+    }
+    
+    
+    
+    
+    
+    public void setName(String Name) {
+        name = Name;
+    }
+    
+     public void setBase(double Base) {
+        base = Base;
+    }
+    
+     public void setHeight(double Height) {
+        height = Height;
+    }
+    
+    public void readInput() {
+        
+        System.out.println("What is the triangle's name");
+        
+        name = scan.nextLine();
+        
+        System.out.println("What is the triangle's base");
+        
+        base = scan.nextDouble();
+        
+        System.out.println("What is the triangle's height");
+        
+        height = scan.nextDouble();
+        
+    }
+    
+
+    public void writeOutput() {
+        
+        double area = base*height*(.5);
+        
+        System.out.println("Triangle name is: " + name);
+        System.out.println("Triangle base is: " + base);
+        System.out.println("Triangle height is: " + height);
+        System.out.printf("Triangle area is: %.1f",area);
 
 
-public class Main
-{
-	public static void main (String[] args) throws IOException {
-		
-//String inFile, outFile; 
+    }
+    
 
-		
-
-Scanner input = new Scanner(System.in);
-
-String inputFile = getInFile();
-		
-System.out.print(inputFile);
-
-	}
-
-
-
-public static String getInFile() {
-
-
-   Scanner input = new Scanner(System.in);
-
-	String var1;
-	boolean valid = true;
-	
-	while (valid) {
-	System.out.print("Enter name of ");
-	
-	var1 = input.nextLine();
-	
-	try {
-	    
-	    PrintWriter outputFile = new PrintWriter(var1);
-	    
-	    valid = false;
-	}
-	
-	catch(Exception e) {
-	    System.out.print("Enter valid file");   
-	}
-	
-	}
-	
-	return ;
-
-}}
-
+}
 
