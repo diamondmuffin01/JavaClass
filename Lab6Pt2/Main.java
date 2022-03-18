@@ -1,6 +1,21 @@
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
+/**
+ * Main class does the following:
+ * 1) Ask user which option they want to use, afterwhich a method is called.
+ * 2) Each method (useConsole() & useGUI()) creates an object when called.
+ * 3) The classes that are created does the arithemtic & returns if to the method.
+ * 
+ * @author Cesar Melero
+ * @version v1.0
+ * @since 3/18/2022
+ * 
+*/
+
+
+
+
 public class Main
 {
     public static void main(String[] args) {
@@ -24,6 +39,13 @@ public class Main
     }
     
  
+ /**
+  * 
+  * Both methods work very similary in which they don't have parmeters, and does
+  * not return anything
+  * 
+  * 
+ */
     
     public static void useConsole(){
         
@@ -38,11 +60,11 @@ public class Main
         int counter = keyboard.nextInt();
         System.out.println("===============================");   
 
-        //formatting
-        SavingsAccount bankAccount = new SavingsAccount(balance, intRate);  
 
         
         //creates new SavingsAccount object to use SavingsAccount methods
+        SavingsAccount bankAccount = new SavingsAccount(balance, intRate);  
+
         for(int i=1;i<=counter;i++){
             System.out.print("Enter Month " + i + " deposits $");
             bankAccount.makeDeposit(keyboard.nextDouble());
@@ -51,6 +73,7 @@ public class Main
             bankAccount.makeWithdraw(keyboard.nextDouble());
             
             bankAccount.calcInterest();
+   
             }
         
         
@@ -60,7 +83,7 @@ public class Main
         
         System.out.printf("\nTotal withdraw: $%,.2f",bankAccount.getWithdraw());
         
-    //   System.out.printf("\nTotal interest: $%,.2f",bankAccount.getInterest());
+       System.out.printf("\nTotal interest: $%,.2f",bankAccount.getInterest());
         
         
     }  //end useConsole()
@@ -90,8 +113,8 @@ public class Main
             
             JOptionPane.showMessageDialog(null,String.format("Ending balance: $%,.2f",bankAccount.getBalance()) +
         String.format("\nTotal deposits: $%,.2f",bankAccount.getDeposit()) +
-        String.format("\nTotal withdraw: $%,.2f",bankAccount.getWithdraw()));
- //       String.format("\nTotal interest: $%,.2f",bankAccount.getInterest()));
+        String.format("\nTotal withdraw: $%,.2f",bankAccount.getWithdraw())+
+        String.format("\nTotal interest: $%,.2f",bankAccount.getInterest()));
         }
 
 
